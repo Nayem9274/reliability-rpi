@@ -4,8 +4,6 @@ This repository contains notebook-based code for reproducing the computational
 experiments in **When Should RNA–Protein Interaction Predictions Be Trusted?
 Reliability Profiling and Failure Detection under Unseen-Protein Shift**.
 
-The code is intentionally kept as Jupyter notebooks. No separate `src/`, `models/`,
-or script package is required.
 
 ## Repository layout
 
@@ -14,9 +12,8 @@ or script package is required.
 ├── 01_primary_benchmark.ipynb
 ├── 02_posthoc_analysis.ipynb
 ├── 03_threshold_aligned_reliability.ipynb
-├── requirements.txt              # recommended
-├── data/                         # optional small CSVs / split manifests
-└── results/                      # optional released result/source CSVs
+├── requirements.txt                                      
+└── results/                     
 ```
 
 ### 01_primary_benchmark.ipynb
