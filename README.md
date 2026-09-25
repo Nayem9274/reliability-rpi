@@ -21,10 +21,6 @@ Runs the three-dataset, four-model protein-cold benchmark, performs split checks
 saves validation/test predictions and metrics, and creates the compact artifact
 used by the downstream notebooks.
 
-The notebook writes helper `.py` modules during execution. This is expected:
-they are generated automatically from notebook cells and do not need to be
-manually maintained as separate source files in the repository.
-
 ### 02_posthoc_analysis.ipynb
 Uses the saved prediction artifact without retraining the RPI models. It contains
 protein-balanced evaluation and additional post-hoc reliability analyses.
@@ -44,18 +40,6 @@ resources distributed with ZHMolGraph:
 
 Set the data path in Notebook 01 before running.
 
-For a lightweight reproducibility release, it is useful to include the small
-derived CSVs needed to regenerate manuscript tables/figures, such as:
-
-- split manifests;
-- final outer-test prediction table (compressed if needed);
-- protein-balanced summary/source tables;
-- failure-detector result tables;
-- figure source CSVs.
-
-The large pretrained embeddings do not need to be duplicated if the public
-Zenodo source remains available.
-
 ## Recommended run order
 
 1. Open `01_primary_benchmark.ipynb`.
@@ -70,15 +54,12 @@ Zenodo source remains available.
 8. Use Notebook 03 outputs as the final threshold-aligned reliability results.
 
 The internal artifact name `dependable_rpi_journal_v1_ARTIFACTS.zip` is retained
-for compatibility with the current notebooks. It is only a filename; changing it
-is optional, but all dependent input paths must then be updated consistently.
+for compatibility with the current notebooks.
 
 ## Environment
 
 The notebooks were designed for a Python/PyTorch environment with GPU support
-for primary model training. Post-hoc analyses can run on CPU. Record the exact
-package versions used for the released experiments in `requirements.txt` or an
-environment file.
+for primary model training. Post-hoc analyses can run on CPU.
 
 ## Reproducing figures and tables without retraining
 
